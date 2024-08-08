@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		16E0319F2C63248800C49DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E0319E2C63248800C49DD0 /* AppDelegate.swift */; };
-		16E031A12C63248800C49DD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E031A02C63248800C49DD0 /* SceneDelegate.swift */; };
-		16E031A32C63248800C49DD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E031A22C63248800C49DD0 /* ViewController.swift */; };
+		16E031A32C63248800C49DD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E031A22C63248800C49DD0 /* MainViewController.swift */; };
 		16E031A62C63248800C49DD0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 16E031A52C63248800C49DD0 /* Base */; };
 		16E031A82C63248900C49DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E031A72C63248900C49DD0 /* Assets.xcassets */; };
 		16E031AB2C63248900C49DD0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 16E031AA2C63248900C49DD0 /* Base */; };
+		16E031B52C63250400C49DD0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E031B32C63250400C49DD0 /* RootViewController.swift */; };
+		16E031B62C63250400C49DD0 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16E031B42C63250400C49DD0 /* RootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16E0319B2C63248800C49DD0 /* SeperateCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeperateCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E0319E2C63248800C49DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16E031A02C63248800C49DD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16E031A22C63248800C49DD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16E031A22C63248800C49DD0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		16E031A52C63248800C49DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16E031A72C63248900C49DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16E031AA2C63248900C49DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16E031AC2C63248900C49DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16E031B32C63250400C49DD0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		16E031B42C63250400C49DD0 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				16E0319E2C63248800C49DD0 /* AppDelegate.swift */,
-				16E031A02C63248800C49DD0 /* SceneDelegate.swift */,
-				16E031A22C63248800C49DD0 /* ViewController.swift */,
-				16E031A42C63248800C49DD0 /* Main.storyboard */,
+				16E031B22C6324C800C49DD0 /* DummyFile */,
 				16E031A72C63248900C49DD0 /* Assets.xcassets */,
 				16E031A92C63248900C49DD0 /* LaunchScreen.storyboard */,
 				16E031AC2C63248900C49DD0 /* Info.plist */,
 			);
 			path = SeperateCalculator;
+			sourceTree = "<group>";
+		};
+		16E031B22C6324C800C49DD0 /* DummyFile */ = {
+			isa = PBXGroup;
+			children = (
+				16E031A22C63248800C49DD0 /* MainViewController.swift */,
+				16E031A42C63248800C49DD0 /* Main.storyboard */,
+				16E031B82C63324300C49DD0 /* View */,
+				16E031B72C63323600C49DD0 /* Controller */,
+			);
+			path = DummyFile;
+			sourceTree = "<group>";
+		};
+		16E031B72C63323600C49DD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16E031B32C63250400C49DD0 /* RootViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16E031B82C63324300C49DD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16E031B42C63250400C49DD0 /* RootViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +154,7 @@
 			files = (
 				16E031A82C63248900C49DD0 /* Assets.xcassets in Resources */,
 				16E031AB2C63248900C49DD0 /* Base in Resources */,
+				16E031B62C63250400C49DD0 /* RootViewController.xib in Resources */,
 				16E031A62C63248800C49DD0 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16E031A32C63248800C49DD0 /* ViewController.swift in Sources */,
+				16E031A32C63248800C49DD0 /* MainViewController.swift in Sources */,
 				16E0319F2C63248800C49DD0 /* AppDelegate.swift in Sources */,
-				16E031A12C63248800C49DD0 /* SceneDelegate.swift in Sources */,
+				16E031B52C63250400C49DD0 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +322,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeperateCalculator/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Calculator;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,6 +350,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeperateCalculator/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Calculator;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
