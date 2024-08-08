@@ -28,6 +28,7 @@ class RootViewController: UIViewController {
     var secondInput: String = ""
     var result: Any = 0
     var operation: String = ""
+    var Validate: Bool = false
     
     
     override func viewDidLoad() {
@@ -38,16 +39,23 @@ class RootViewController: UIViewController {
     }
     
     func updateDisplay(with input: String) {
-        
+         print("2")
         if inputLabel.text == "0" {
             inputLabel.text = input
-            print("1")
+           print("first")
         } else
         {
             inputLabel.text?.append(input)
-            print("2")
+           print("second")
         }
         
+    }
+    
+    
+    func newvaluechecking(finishTask: Bool) {
+        if finishTask == true {
+            
+        }
     }
     
     
@@ -57,12 +65,16 @@ class RootViewController: UIViewController {
         if let calculateButton = sender.titleLabel?.text {
             
             if calculateButton == "+" {
+                print("4")
                 
                 operation = calculateButton
                 
                 if firstInput != "" && secondInput != ""   {
+                  print("5")
                     result = Double(firstInput)! + Double(secondInput)!
-                    inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                   inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                   firstInput = String(format: "%.0f", result as! CVarArg)
+                   secondInput = ""
                     
                 }else
                 {
@@ -77,6 +89,9 @@ class RootViewController: UIViewController {
                 if firstInput != ""  && secondInput != "" {
                     result = Double(firstInput)! - Double(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
+                    
                 }else
                 {
                     firstInput = inputLabel.text!
@@ -89,6 +104,9 @@ class RootViewController: UIViewController {
                 if firstInput != "" && secondInput != "" {
                     result = Double(firstInput)! * Double(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
+                    
                 }else
                 {
                     firstInput = inputLabel.text!
@@ -101,6 +119,9 @@ class RootViewController: UIViewController {
                 if firstInput != "" && secondInput != "" {
                     result = Double(firstInput)! / Double(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
+                    
                 }else
                 {
                     firstInput = inputLabel.text!
@@ -110,8 +131,11 @@ class RootViewController: UIViewController {
                 operation = calculateButton
                 
                 if firstInput != "" && secondInput != "" {
+                    guard secondInput != "0" else { return inputLabel.text = "Error"}
                     result = Int(firstInput)! % Int(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
                 } else
                 {
                     firstInput = inputLabel.text!
@@ -127,18 +151,24 @@ class RootViewController: UIViewController {
                     result = 0
                     result = Double(firstInput)! + Double(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
                     print("case +")
                 case "-":
                     inputLabel.text = ""
                     result = 0
                     result = Double(firstInput)! - Double(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
                     print("case -")
                 case "x":
                     inputLabel.text = ""
                     result = 0
                     result = Double(firstInput)! * Double(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
                     print("case x")
                 case "÷":
                     inputLabel.text = ""
@@ -146,12 +176,17 @@ class RootViewController: UIViewController {
                     guard secondInput != "0" else {  return inputLabel.text = "Error" }
                     result = Double(firstInput)! / Double(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
                     print("case /")
                 case "%":
                     inputLabel.text = ""
                     result = 0
+                    guard secondInput != "0" else { return inputLabel.text = "Error" }
                     result = Int(firstInput)! % Int(secondInput)!
                     inputLabel.text = String(format: "%.0f", result as! CVarArg)
+                    firstInput = String(format: "%.0f", result as! CVarArg)
+                    secondInput = ""
                     print("case +")
                 default:
                     inputLabel.text = "Error"
@@ -168,12 +203,14 @@ class RootViewController: UIViewController {
         guard let input = sender.titleLabel?.text else { return }
         
             if firstInput != "" && secondInput == "" {
+                print("1")
                 inputLabel.text = ""
             }
             
             updateDisplay(with: input)
             
             if firstInput != ""  {
+                print("3")
                 secondInput = inputLabel.text ?? "";
             }
         
